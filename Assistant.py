@@ -9,7 +9,7 @@ from extra.models.llama import Transformer, convert_from_huggingface
 from sentencepiece import SentencePieceProcessor
 
 class AIRA:
-    def create_fixed_tokenizer(output_file):
+    def create_fixed_tokenizer(self, output_file):
         print("creating fixed tokenizer")
         import extra.junk.sentencepiece_model_pb2 as spb2
         mp = spb2.ModelProto()
@@ -19,7 +19,7 @@ class AIRA:
         with open(output_file, "wb") as f:
             f.write(mp.SerializeToString())
 
-    def create_model_cache(output_file, model):
+    def create_model_cache(self,output_file, model):
         print(f"creating model cache at {output_file}")
         with Timing("download weights: "):
             part1 = nn.state.torch_load(fetch("https://huggingface.co/teknium/OpenHermes-2.5-Mistral-7B/resolve/main/pytorch_model-00001-of-00002.bin?download=true"))

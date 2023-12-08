@@ -13,7 +13,6 @@ screen = pygame.display.set_mode((WIDTH, HEIGHT))
 pygame.display.set_caption("A.I.R.A")
 font_list = ['./Pixellettersfull-BnJ5.ttf', './AovelSansRounded-rdDL.ttf', './Mvdawlatulislam-Z8dJ.ttf', './ShortBaby-Mg2w.ttf']
 font_file = font_list[0] # Choose the font of your choice
-
 font = pygame.font.Font(font_file, FONT_SIZE)
 
 messages = []
